@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Works from "./components/Works";
@@ -5,14 +6,62 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function App() {
+  const [bgImageOpacity, setBgImageOpacity] = useState(1);
+
+  const handleScroll = () => {
+    const worksElement = document.getElementById("works");
+    if (!worksElement) return;
+
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const worksPosition = worksElement.offsetTop;
+    const opacity = Math.max(
+      1 - (scrollPosition - worksPosition) / window.innerHeight,
+      0
+    );
+    setBgImageOpacity(opacity);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <div className="bg-neutral-900 text-stone-200">
+      <div className="relative text-stone-200">
+        {/* Background Image */}
+        <div
+          className="h-hero-minus-header"
+          style={{
+            backgroundImage: "url(/img/debugging.png)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            opacity: bgImageOpacity,
+            position: "absolute",
+            top: "4rem", // header height
+            left: 0,
+            right: 0,
+            bottom: 0,
+            transition: "opacity 0.3s ease",
+            zIndex: -1, // Behind content but above background colour
+          }}
+        />
+
+        {/* Content */}
         <Header />
         <Hero />
-        <Works />
+        <div id="works">
+          <Works />
+        </div>
         <Contact />
         <Footer />
+
+        {/* Background colour behind everything */}
+        <div className="absolute bg-neutral-900 top-0 left-0 right-0 bottom-0 z-[-2]"></div>
       </div>
     </>
   );

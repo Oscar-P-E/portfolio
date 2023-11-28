@@ -11,19 +11,3 @@
   height: calc(100vh - 4rem);
   height: calc(100svh - 4rem);
 }
-
-/* @keyframes marquee {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.marquee {
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: marquee 25s linear infinite;
-} */

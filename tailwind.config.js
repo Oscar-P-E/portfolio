@@ -5,14 +5,14 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Concourse T4", "ui-sans-serif", "system-ui", "sans-serif"],
-        heading: ["Advocate C61", "sans-serif"],
+        heading: ["Advocate C51", "sans-serif"],
         "sans-extralight": [
           "Concourse T2",
           "ui-sans-serif",
           "system-ui",
           "sans-serif",
         ],
-        "heading-wider": ["Advocate C61", "sans-serif"],
+        "heading-wider": ["Advocate C63", "sans-serif"],
       },
     },
   },
