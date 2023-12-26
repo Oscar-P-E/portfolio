@@ -14,12 +14,13 @@ export default function Header() {
         </Marquee>
         <ul className="flex gap-12 text-2xl px-12 py-1 ml-2 font-mono uppercase border border-stone-200 ">
           <li>
-            <a href="#" className="lowercase hover:uppercase">
+            {/* link to id works */}
+            <a href="#works" className="lowercase hover:uppercase">
               Works
             </a>
           </li>
           <li>
-            <a href="#" className="lowercase hover:uppercase">
+            <a href="#contact" className="lowercase hover:uppercase">
               Contact
             </a>
           </li>

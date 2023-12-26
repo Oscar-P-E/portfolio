@@ -57,7 +57,7 @@ export default function App() {
           <Hero />
         </div>
 
-        <div id="works">
+        <div id="">
           <Works />
         </div>
 

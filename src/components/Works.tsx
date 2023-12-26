@@ -1,8 +1,8 @@
 export default function Works() {
   return (
     <div className="pt-24 pb-24">
-      <div className="pl-24 pr-2 pt-52">
-        <h1 className="text-6xl font-mono">
+      <div className="pl-24 pr-2 pt-36">
+        <h1 id="works" className="text-6xl font-mono pt-12">
           Portfolio<span className="blinking-cursor">_</span>
         </h1>
 
