@@ -13,6 +13,7 @@ export default {
           "sans-serif",
         ],
         "heading-wider": ["Advocate C63", "sans-serif"],
+        mono: ["ProggyClean Nerd Font", "ui-monospace", "monospace"],
       },
     },
   },

@@ -11,3 +11,19 @@
   height: calc(100vh - 4rem);
   height: calc(100svh - 4rem);
 }
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.blinking-cursor {
+  animation: blink 1s step-start 0s infinite;
+}

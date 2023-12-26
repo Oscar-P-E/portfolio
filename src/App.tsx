@@ -41,7 +41,7 @@ export default function App() {
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             opacity: bgImageOpacity,
-            position: "absolute",
+            position: "sticky",
             top: "4rem", // header height
             left: 0,
             right: 0,
@@ -52,12 +52,19 @@ export default function App() {
         />
 
         {/* Content */}
-        <Header />
-        <Hero />
+        <div className="absolute top-0 right-0 left-0">
+          <Header />
+          <Hero />
+        </div>
+
         <div id="works">
           <Works />
         </div>
-        <Contact />
+
+        <div id="contact">
+          <Contact />
+        </div>
+
         <Footer />
 
         {/* Background colour behind everything */}
