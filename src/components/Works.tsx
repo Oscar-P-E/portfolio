@@ -8,50 +8,76 @@ export default function Works() {
 
         <div className="grid grid-cols-3 gap-x-4 gap-y-12 pt-12">
           <div className="col-span-2">
-            <img src="/img/works/1.png" alt="" />
+            <img src="/img/works/optimizeelectrical.png" alt="" />
           </div>
 
           <div>
-            <h2 className="text-4xl font-mono">Project 1</h2>
+            <h2 className="text-4xl font-mono">
+              <a href="http://optimizeelectrical.com.au">Optimize Electrical</a>
+            </h2>
+            <p className="text-2xl font-mono py-2 ">
+              Not overly fancy, yet professional and modern. User-friendly
+              design, intuitive interface. Easy to see who they are are, what
+              they do, and how to{" "}
+              <span className="whitespace-nowrap">contact them</span>.
+            </p>
             <p className="text-2xl font-mono">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              voluptatem, quas, voluptas, asperiores quod doloremque
-              exercitationem quia quibusdam voluptatum voluptates doloribus
-              fugiat. Quisquam voluptatem, quas, voluptas, asperiores quod
-              doloremque exercitationem quia quibusdam voluptatum voluptates
-              doloribus fugiat.
+              {"> "}
+              <a
+                className="underline decoration-dotted"
+                href="http://optimizeelectrical.com.au"
+              >
+                optimizeelectrical.com.au
+              </a>
             </p>
           </div>
 
           <div>
-            <h2 className="text-4xl font-mono">Project 2</h2>
+            <h2 className="text-4xl font-mono">Glass Ninja</h2>
+            <p className="text-2xl font-mono py-2 ">
+              A non-standard design almost entirely in pure black and white.
+              Everything fits on a single page, resembling a window with panes
+              that expand into full screen pages. Compact but still intuitive.
+              Calls to action are never buried. A "clean" design for a window{" "}
+              <span className="whitespace-nowrap">cleaning business.</span>
+            </p>
             <p className="text-2xl font-mono">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              voluptatem, quas, voluptas, asperiores quod doloremque
-              exercitationem quia quibusdam voluptatum voluptates doloribus
-              fugiat. Quisquam voluptatem, quas, voluptas, asperiores quod
-              doloremque exercitationem quia quibusdam voluptatum voluptates
-              doloribus fugiat.
+              {"> "}
+              <a
+                className="underline decoration-dotted "
+                href="http://glassninja.com.au"
+              >
+                glassninja.com.au
+              </a>
             </p>
           </div>
 
           <div className="col-span-2">
-            <img src="/img/works/2.png" alt="" />
+            <img src="/img/works/glassninja.png" alt="" />
           </div>
 
           <div className="col-span-2">
-            <img src="/img/works/3.png" alt="" />
+            <img src="/img/works/gains.png" alt="" />
           </div>
 
           <div>
-            <h2 className="text-4xl font-mono">Project 3</h2>
+            <h2 className="text-4xl font-mono">gAIns - AI Training App</h2>
+            <p className="text-2xl font-mono py-2 ">
+              Built out of frustration with existing workout apps. gAIns is all
+              about smart, personalized training. It adapts your workout plan
+              based on your progress and goals. No fluff – just a
+              straightforward, data-driven approach to make your workouts count.
+              It's like having a personal trainer in your pocket, but{" "}
+              <span className="whitespace-nowrap">powered by AI.</span>
+            </p>
             <p className="text-2xl font-mono">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              voluptatem, quas, voluptas, asperiores quod doloremque
-              exercitationem quia quibusdam voluptatum voluptates doloribus
-              fugiat. Quisquam voluptatem, quas, voluptas, asperiores quod
-              doloremque exercitationem quia quibusdam voluptatum voluptates
-              doloribus fugiat.
+              {"> "}
+              <a
+                className="underline decoration-dotted"
+                href="https://ai-training-app.vercel.app/"
+              >
+                ai-training-app.vercel.app
+              </a>
             </p>
           </div>
         </div>
