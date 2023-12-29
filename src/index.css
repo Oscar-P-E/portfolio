@@ -2,15 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-neutral-900;
+  }
+}
+
+
+/* Use small viewport height for less glitchy mobile experience */
+
 .h-100svh {
   height: 100vh; /* fallback */
   height: 100svh;
 }
 
 .h-hero-minus-header {
-  height: calc(100vh - 4rem);
-  height: calc(100svh - 4rem);
+  height: calc(100vh - 3.5rem); /* fallback */
+  height: calc(100svh - 3.5rem); /* hardcoded header height */
 }
+
+/* blinking underscore */
 
 @keyframes blink {
   0% {
@@ -27,3 +38,4 @@
 .blinking-cursor {
   animation: blink 1s step-start 0s infinite;
 }
+

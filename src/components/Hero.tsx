@@ -2,8 +2,8 @@ import { useEffect } from "react";
 
 export default function Hero() {
   const adjustFontSize = () => {
-    const vhSize = window.innerHeight * 0.2; // 30vh
-    const vwSize = window.innerWidth * 0.1; // 20vw
+    const vhSize = window.innerHeight * 0.2;
+    const vwSize = window.innerWidth * 0.1;
     const fontSize = Math.min(vhSize, vwSize);
 
     const heading = document.querySelector(".hero-heading") as HTMLElement;
@@ -38,14 +38,25 @@ export default function Hero() {
           Developer
         </h1>
       </div>
-      <div className="text-5xl mx-auto pt-12 px-4 font-mono">
-        <p className="pb-2">My name is Oscar El.</p>
+      <div className="text-5xl mx-auto pt-10 pr-10 font-mono text-end">
+        <p className="pb-2">
+          My name is <span className="whitespace-nowrap">Oscar El.</span>
+        </p>
         <p>
-          I build business websites and web applications.
-          <span className="blinking-cursor">_</span>
+          I build business websites and{" "}
+          <span className="whitespace-nowrap">web applications.</span>
+          {/* <span className="blinking-cursor">_</span> */}
         </p>
         <div className="text-2xl pt-5">
-          <button className="bg-green-500 text-neutral-900 hover:bg-green-400 px-5 pt-2 pb-1.5 rounded-none  uppercase tracking-wider">
+          <button
+            onClick={() => {
+              const contactElement = document.getElementById("contact");
+              if (contactElement) {
+                contactElement.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+            className="bg-green-400 text-neutral-900 hover:bg-green-300 px-5 pt-2 pb-1.5 rounded-md  uppercase tracking-wider border border-neutral-900 hover:shadow-2xl hover:border-stone-200"
+          >
             Message Me
           </button>
         </div>

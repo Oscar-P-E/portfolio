@@ -1,13 +1,17 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, ChangeEvent } from "react";
+import TextareaAutosize from "react-textarea-autosize";
 
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [useTextArea, setUseTextArea] = useState(false);
+  const [isWritingMsg, setIsWritingMsg] = useState(false);
 
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
-  const messageRef = useRef<HTMLInputElement>(null);
+  const messageInputRef = useRef<HTMLInputElement>(null);
+  const messageTextareaRef = useRef<HTMLTextAreaElement>(null);
 
   const adjustWidth = (
     inputRef: React.RefObject<HTMLInputElement>,
@@ -23,13 +27,55 @@ export default function Contact() {
   useEffect(() => {
     adjustWidth(nameRef, name);
     adjustWidth(emailRef, email);
-    adjustWidth(messageRef, message);
+    adjustWidth(messageInputRef, message);
   }, [name, email, message]);
+
+  useEffect(() => {
+    if (!isWritingMsg) return;
+
+    if (!useTextArea && messageInputRef.current) {
+      const input = messageInputRef.current;
+      input.focus();
+      const length = input.value.length;
+      input.setSelectionRange(length, length);
+    } else if (useTextArea && messageTextareaRef.current) {
+      const textarea = messageTextareaRef.current;
+      textarea.focus();
+      const length = textarea.value.length;
+      textarea.setSelectionRange(length, length);
+    }
+  }, [useTextArea, isWritingMsg]);
+
+  const handleInputChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { value, name } = e.target;
+    switch (name) {
+      case "name":
+        setName(value);
+        adjustWidth(nameRef, value);
+        break;
+      case "email":
+        setEmail(value);
+        adjustWidth(emailRef, value);
+        break;
+      case "message":
+        setMessage(value);
+        setUseTextArea(value.length > 45);
+        if (!useTextArea) {
+          adjustWidth(messageInputRef, value);
+        }
+        setIsWritingMsg(true);
+        break;
+      default:
+        break;
+    }
+  };
 
   return (
     <div className="pt-24">
       <h1 className="text-6xl font-mono pl-2">
-        Why not get it touch?<span className="blinking-cursor">_</span>
+        Why not get in touch?<span className="blinking-cursor">_</span>
       </h1>
 
       <form className="pt-28">
@@ -38,36 +84,52 @@ export default function Contact() {
           <input
             ref={nameRef}
             type="text"
-            className="bg-inherit opacity-50"
+            name="name"
+            className="bg-transparent opacity-50 focus:outline-none"
             placeholder="............"
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={handleInputChange}
           />{" "}
           and my email is{" "}
           <input
             ref={emailRef}
             type="text"
-            className="bg-inherit opacity-50"
+            name="email"
+            className="bg-transparent opacity-50 focus:outline-none"
             placeholder="............"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleInputChange}
           />
           <span className="ml-1">.</span> Message:{" "}
-          <input
-            ref={messageRef}
-            type="text"
-            className="bg-inherit opacity-50"
-            placeholder="............"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
+          {useTextArea ? (
+            <TextareaAutosize
+              ref={messageTextareaRef}
+              name="message"
+              className="bg-transparent opacity-50 w-full resize-none focus:outline-none"
+              placeholder="............"
+              value={message}
+              onChange={handleInputChange}
+              minRows={1}
+            />
+          ) : (
+            <input
+              ref={messageInputRef}
+              type="text"
+              name="message"
+              className="bg-transparent opacity-50 focus:outline-none"
+              placeholder="............"
+              value={message}
+              onChange={handleInputChange}
+            />
+          )}
           <div className="pt-6 w-fit ml-auto">
-            <button className="text-4xl uppercase tracking-wider border border-stone-200 px-3 py-2">
+            <button className="text-4xl uppercase tracking-wider border border-stone-200 px-3 py-2 hover:bg-green-400 hover:text-neutral-900 hover:border-green-400">
               Send Message
             </button>
           </div>
         </div>
       </form>
+
       <div className="text-4xl font-mono ml-auto w-fit pt-28 pr-12">
         ...or just email me at{" "}
         <a

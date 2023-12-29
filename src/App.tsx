@@ -36,13 +36,13 @@ export default function App() {
         <div
           className="h-hero-minus-header"
           style={{
-            backgroundImage: "url(/img/debugging.png)",
+            backgroundImage: "url(/img/debugging-noise.jpg)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             opacity: bgImageOpacity,
             position: "sticky",
-            top: "4rem", // header height
+            top: "3.5rem", // hard coded header height, make sure to update it in index.css and Header.tsx also
             left: 0,
             right: 0,
             bottom: 0,
@@ -52,12 +52,12 @@ export default function App() {
         />
 
         {/* Content */}
-        <div className="absolute top-0 right-0 left-0">
+        <div id="home" className="absolute top-0 right-0 left-0">
           <Header />
           <Hero />
         </div>
 
-        <div id="">
+        <div>
           <Works />
         </div>
 
@@ -68,7 +68,7 @@ export default function App() {
         <Footer />
 
         {/* Background colour behind everything */}
-        <div className="absolute bg-neutral-900 top-0 left-0 right-0 bottom-0 z-[-2]"></div>
+        {/* <div className="absolute bg-neutral-900 top-0 left-0 right-0 bottom-0 z-[-2]"></div> */}
       </div>
     </>
   );
