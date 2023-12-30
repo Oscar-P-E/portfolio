@@ -15,6 +15,9 @@ export default {
         "heading-wider": ["Advocate C63", "sans-serif"],
         mono: ["ProggyClean Nerd Font", "ui-monospace", "monospace"],
       },
+      colors: {
+        "custom-neutral-850": "rgb(31, 31, 31)",
+      },
     },
   },
   plugins: [],

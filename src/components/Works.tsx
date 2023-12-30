@@ -6,9 +6,23 @@ export default function Works() {
           Portfolio<span className="blinking-cursor">_</span>
         </h1>
 
-        <div className="grid grid-cols-3 gap-x-4 gap-y-12 pt-12">
+        <div className="grid grid-cols-3 gap-x-4 gap-y-12 pt-52">
+          {/* Project 1 */}
           <div className="col-span-2">
-            <img src="/img/works/optimizeelectrical.png" alt="" />
+            <div className="pb-16 pr-8">
+              <img
+                className="rounded-xl"
+                src="/img/works/oe-multiple.jpg"
+                alt="optimize electrical responsive design multiple devices"
+              />
+            </div>
+            <div className="pb-16 pr-8">
+              <img
+                className="rounded-xl"
+                src="/img/works/oe-phone.jpg"
+                alt="optimize electrical mobile phone"
+              />
+            </div>
           </div>
 
           <div>
@@ -32,8 +46,11 @@ export default function Works() {
             </p>
           </div>
 
+          {/* Project 2 */}
           <div>
-            <h2 className="text-4xl font-mono">Glass Ninja</h2>
+            <h2 className="text-4xl font-mono">
+              <a href="http://glassninja.com.au">Glass Ninja</a>
+            </h2>
             <p className="text-2xl font-mono py-2 ">
               A non-standard design almost entirely in pure black and white.
               Everything fits on a single page, resembling a window with panes
@@ -53,10 +70,33 @@ export default function Works() {
           </div>
 
           <div className="col-span-2">
-            <img src="/img/works/glassninja.png" alt="" />
+            <div className="pb-16 pr-8">
+              {/* <div className="pl-12 pr-11 pt-12 pb-11 bg-gradient-to-tr opacity-90 from-[rgb(240,243,254)] to-[rgb(210,210,225)] rounded-xl"> */}
+              <img
+                className="rounded-xl"
+                src="/img/works/gn-browser.jpg"
+                alt="optimize electrical responsive design multiple devices"
+              />
+              {/* </div> */}
+            </div>
+            <div className="pb-16 pr-8">
+              <img
+                className="rounded-xl"
+                src="/img/works/gn-phone.jpg"
+                alt="optimize electrical mobile phone"
+              />
+            </div>
+            <div className="pb-16 pr-8">
+              <img
+                className="rounded-xl"
+                src="/img/works/gn-phone-contact.jpg"
+                alt="optimize electrical mobile phone"
+              />
+            </div>
           </div>
 
-          <div className="col-span-2">
+          {/* Project 3 */}
+          {/* <div className="col-span-2">
             <img src="/img/works/gains.png" alt="" />
           </div>
 
@@ -80,6 +120,7 @@ export default function Works() {
               </a>
             </p>
           </div>
+           */}
         </div>
       </div>
     </div>

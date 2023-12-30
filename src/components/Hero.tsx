@@ -38,7 +38,7 @@ export default function Hero() {
           Developer
         </h1>
       </div>
-      <div className="text-5xl mx-auto pt-10 pr-10 font-mono text-end">
+      <div className="text-6xl mx-auto pt-12 pr-12 font-mono text-end">
         <p className="pb-2">
           My name is <span className="whitespace-nowrap">Oscar El.</span>
         </p>
@@ -47,7 +47,7 @@ export default function Hero() {
           <span className="whitespace-nowrap">web applications.</span>
           {/* <span className="blinking-cursor">_</span> */}
         </p>
-        <div className="text-2xl pt-5">
+        <div className="text-3xl pt-5">
           <button
             onClick={() => {
               const contactElement = document.getElementById("contact");
@@ -55,7 +55,7 @@ export default function Hero() {
                 contactElement.scrollIntoView({ behavior: "smooth" });
               }
             }}
-            className="bg-green-400 text-neutral-900 hover:bg-green-300 px-5 pt-2 pb-1.5 rounded-md  uppercase tracking-wider border border-neutral-900 hover:shadow-2xl hover:border-stone-200"
+            className="bg-green-400 text-neutral-900 hover:bg-green-300 px-4 pt-2 pb-1.5 rounded-md  uppercase tracking-widest border border-neutral-900 hover:shadow-2xl hover:border-stone-200"
           >
             Message Me
           </button>

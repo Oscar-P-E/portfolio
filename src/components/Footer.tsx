@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="pt-24">
-      <div className="pt-10 pb-8 bg-neutral-900 text-stone-200 opacity-50 px-2 mx-auto flex justify-center gap-24 items-center h-14">
+      <div className="pt-10 pb-8 text-stone-200 opacity-50 px-2 mx-auto flex justify-center gap-24 items-center h-14">
         <div className="text-2xl font-mono">
           email{" "}
           <a href="mailto:oscarssecretary@gmail.com">

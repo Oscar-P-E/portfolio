@@ -4,10 +4,10 @@
 
 @layer base {
   body {
-    @apply bg-neutral-900;
+    /* @apply bg-neutral-800; */
+    @apply bg-gradient-to-b from-custom-neutral-850 to-black;
   }
 }
-
 
 /* Use small viewport height for less glitchy mobile experience */
 
@@ -38,4 +38,3 @@
 .blinking-cursor {
   animation: blink 1s step-start 0s infinite;
 }
-
