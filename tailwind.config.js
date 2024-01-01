@@ -16,7 +16,7 @@ export default {
         mono: ["ProggyClean Nerd Font", "ui-monospace", "monospace"],
       },
       colors: {
-        "custom-neutral-850": "rgb(31, 31, 31)",
+        "neutral-850": "rgb(31, 31, 31)",
       },
     },
   },

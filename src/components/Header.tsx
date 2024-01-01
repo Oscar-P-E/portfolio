@@ -14,7 +14,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-10 h-14 bg-opacity-10 backdrop-blur-sm">
+    <header className="sticky top-0 z-10 h-14 bg-neutral-900 bg-opacity-30 backdrop-blur-sm">
       {/* ^^^ remember to change hardcoded header height in index.css and App.tsx bg image to match this ^^^ */}
       <nav className="px-2 border-b border-stone-200 mx-auto flex justify-between items-center h-full">
         <Marquee gradient={false} speed={50}>

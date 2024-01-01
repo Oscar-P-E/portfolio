@@ -5,7 +5,7 @@
 @layer base {
   body {
     /* @apply bg-neutral-800; */
-    @apply bg-gradient-to-b from-custom-neutral-850 to-black;
+    @apply bg-gradient-to-b from-neutral-800 to-black;
   }
 }
 
