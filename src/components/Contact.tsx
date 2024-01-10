@@ -31,7 +31,7 @@ export default function Contact() {
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       )
       .then(
         (result) => {
@@ -47,7 +47,7 @@ export default function Contact() {
         },
         (error) => {
           console.log(error.text);
-        }
+        },
       );
   };
 
@@ -65,7 +65,7 @@ export default function Contact() {
 
   const adjustWidth = (
     inputRef: React.RefObject<HTMLInputElement>,
-    value: string
+    value: string,
   ) => {
     if (inputRef.current) {
       const textLength = value.length;
@@ -97,7 +97,7 @@ export default function Contact() {
   }, [useTextArea, isWritingMsg]);
 
   const handleInputChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { value, name } = e.target;
     switch (name) {
@@ -123,20 +123,22 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-24">
-      <h1 className="text-6xl font-mono pl-2">Why not get in touch?</h1>
+    <div className="pt-20">
+      <h1 id="contact" className="pl-12 pt-4 font-mono text-6xl">
+        Why not get in touch?
+      </h1>
 
       {success ? (
         <div className="pt-28">
-          <div className="bg-green-400 bg-opacity-50 font-mono text-4xl max-w-5xl border-2 border-stone-200 mx-auto px-12 pt-12 pb-10 ">
-            <h2 className="text-5xl pb-4">Message Sent!</h2>
+          <div className="mx-auto max-w-5xl border-2 border-stone-200 bg-green-400 bg-opacity-50 px-12 pb-10 pt-12 font-mono text-4xl ">
+            <h2 className="pb-4 text-5xl">Message Sent!</h2>
             Thanks <span className="opacity-50">{name}</span>! I'll get back to
             you at <span className="opacity-50">{email}</span> as soon as I can!
           </div>
         </div>
       ) : (
         <form ref={formRef} onSubmit={handleSubmit} className="pt-28">
-          <div className="font-mono text-5xl max-w-5xl border-2 border-stone-200 mx-auto px-12 pt-12 pb-10">
+          <div className="mx-auto max-w-5xl border-2 border-stone-200 bg-slate-900 px-12 pb-10 pt-12 font-mono text-5xl">
             Hi my name is{" "}
             <input
               ref={nameRef}
@@ -168,7 +170,7 @@ export default function Contact() {
               <TextareaAutosize
                 ref={messageTextareaRef}
                 name="message"
-                className="bg-transparent opacity-50 w-full resize-none focus:outline-none"
+                className="w-full resize-none bg-transparent opacity-50 focus:outline-none"
                 placeholder="............"
                 value={message}
                 onChange={handleInputChange}
@@ -191,11 +193,11 @@ export default function Contact() {
                 required
               />
             )}
-            <div className="pt-6 w-fit ml-auto">
+            <div className="ml-auto w-fit pt-6">
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="text-4xl uppercase tracking-wider border border-stone-200 px-3 py-2 hover:bg-green-400 hover:text-neutral-900 hover:border-green-400 disabled:bg-gray-500 disabled:border-gray-500 disabled:text-gray-900 disabled:cursor-default disabled:opacity-50"
+                className="border border-stone-200 px-3 py-2 text-4xl uppercase tracking-wider hover:border-cyan-400 hover:bg-cyan-400 hover:text-neutral-900 disabled:cursor-default disabled:border-gray-500 disabled:bg-gray-500 disabled:text-gray-900 disabled:opacity-50"
               >
                 Send Message
               </button>
@@ -203,7 +205,7 @@ export default function Contact() {
           </div>
         </form>
       )}
-      <div className="text-4xl font-mono ml-auto w-fit pt-28 pr-12">
+      <div className="ml-auto w-fit pr-12 pt-28 font-mono text-4xl">
         ...or just email me at{" "}
         <a
           href="mailto:oscarssecretary@gmail.com"

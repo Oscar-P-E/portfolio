@@ -16,7 +16,7 @@ export default function About() {
           <div className="flex justify-center">
             <div className="max-w-5xl">
               <h2 className="text-6xl font-mono pb-8">Weapons of Choice:</h2>
-              <ul className="text-2xl font-mono grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-[8vw]">
+              <ul className="text-2xl font-mono grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-y-4 gap-x-[8vw]">
                 <li className="flex items-center justify-start gap-2">
                   <FaReact /> React
                 </li>
